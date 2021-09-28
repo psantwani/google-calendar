@@ -1,4 +1,4 @@
-This is a forked repo. The parent repo is not actively maintained. Updating code to be compatible with Node 14.x.
+**Note:** This is a forked repo. The parent repo is not actively maintained. Updating code to make it compatible with Node v14.x.
 
 Google-Calendar
 =======
