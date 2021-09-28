@@ -1,3 +1,5 @@
+This is a forked repo. The parent repo is not actively maintained. Updating code to be compatible with Node 14.x.
+
 Google-Calendar
 =======
 

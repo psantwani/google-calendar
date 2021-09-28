@@ -5,6 +5,7 @@ module.exports.GoogleCalendar = GoogleCalendar;
 
 var util   = require('util');
 var needle = require('needle');
+var httpRequest = require("request");
 
 function GoogleCalendar(access_token){
   
@@ -23,8 +24,18 @@ function GoogleCalendar(access_token){
     for(var k in params){
       url += '&'+encodeURIComponent(k)+'='+ encodeURIComponent(params[k]);
     }
-    
-    needle.request(type, url, body, options, responseHandler);
+
+    if(type === "GET"){
+      httpRequest.get(url, responseHandler);
+    }
+
+    if(type === "POST"){
+      httpRequest.post({
+        uri: url,
+        body: body,
+        json: true
+      }, responseHandler);
+    }
     
     function responseHandler(error, response, body) {
       if(error) return callback(error, body);
